@@ -12,12 +12,13 @@ import com.helloworld.demo.repository.UserRepository;
 import com.helloworld.demo.model.RequestModel.RequestUser;
 import com.helloworld.demo.model.Model.User;
 @RestController
+@RequestMapping(value = "/api")
 public class WebServiceController {
 
     @Autowired 
     private  UserRepository userRepository;
 
-    @RequestMapping(value="/api/createuser", method=RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value="/createuser", method=RequestMethod.POST, produces = "application/json")
     public ResponseEntity<Message> requestMethodName(@RequestBody RequestUser requestUser) {
  
         Message message = new Message("Successfully Create User");
